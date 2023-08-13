@@ -44,7 +44,11 @@ fun WheatherDto.toWeatherInfo() : WheatherInfo {
     val weatherDataMap = wheatherData.toWheatherDataMap()
     val now = LocalDateTime.now()
     val currentWeatherData = weatherDataMap[0]?.find {
-        val hour = if (now.minute < 30) now.hour else now.hour + 1
+        val hour = when{
+            now.minute < 30 -> now.hour
+            now.hour == 23 -> 12.00
+            else -> now.hour + 1
+        }
         it.time.hour == hour
     }
     return WheatherInfo(
