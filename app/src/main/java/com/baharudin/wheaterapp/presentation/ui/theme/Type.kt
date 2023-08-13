@@ -1,4 +1,4 @@
-package com.baharudin.wheaterapp.ui.theme
+package com.baharudin.wheaterapp.presentation.ui.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle
